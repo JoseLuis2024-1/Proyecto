@@ -66,16 +66,6 @@ else:
 st.plotly_chart(fig_compare, use_container_width=True)
 
 # Sección 3: Integración de ChatGPT
-import streamlit as st
-azul_marino = "#00274C"
-# Creamos el encabezado con el color personalizado
-st.header("Bienvenido al asistente de Preguntas y Respuestas con ChatGPT", style=f"""
-    <style>
-        .st-bb {
-            background-color: {azul_marino};
-        }
-    </style>
-""")
 st.header("Bienvenido al asisente de Preguntas y Respuestas con ChatGPT")
 
 
