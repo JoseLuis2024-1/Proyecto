@@ -7,7 +7,7 @@ import json
 import openai
 
 # Configuración de la página
-st.set_page_config(page_title="Dashboard Financiero", layout="wide")
+st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras", layout="wide")
 
 # Cargar datos
 @st.cache_data
@@ -24,7 +24,7 @@ df['Ratio de Deuda a Patrimonio'] = (df['Short_Term_Debt'] + df['Long_Term_Debt'
 df['Cobertura de Gastos Financieros'] = df['Total_Revenue'] / df['Financial_Expenses']
 
 # Título del dashboard
-st.title("Dashboard Financiero")
+st.title("Dashboard Razones Financieras")
 
 # Sección 1: Gráfica de barras apiladas por sector
 st.header("Análisis por Sector")
