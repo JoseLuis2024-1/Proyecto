@@ -68,7 +68,6 @@ st.plotly_chart(fig_compare, use_container_width=True)
 # Sección 3: Integración de ChatGPT
 st.header("Preguntas y Respuestas con ChatGPT")
 
-
 # Instanciar el cliente de OpenAI
 openai_api_key = st.secrets["OPENAI_API_KEY"]
 client = openai.OpenAI(api_key=openai_api_key)
