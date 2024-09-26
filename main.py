@@ -49,7 +49,7 @@ def colored_header(title, color):
     st.markdown(f"<h2 style='color:{color};'>{title}</h2>", unsafe_allow_html=True)
 
 # Ejemplo de uso:
-colored_header("Análisis por Sector", "#4CAF50")  # Verde claro
+colored_header("Análisis por Sector", "#641e16") 
 
 
 sector_metrics = df.groupby('Industry')[['Ratio de Liquidez Corriente', 'Ratio de Deuda a Patrimonio', 'Cobertura de Gastos Financieros']].mean().reset_index()
