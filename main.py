@@ -14,6 +14,21 @@ def load_data():
     df = pd.read_csv(url)
     return df
 
+#3.Construcción del Dashboard Interactivo
+
+# Filtros interactivos
+industria_seleccionada = st.selectbox('Selecciona una Industria:',
+                                      data['Industry'].unique())
+pais_seleccionado = st.selectbox('Selecciona un País:',
+                                 data['Country'].unique())
+tamano_seleccionado = st.selectbox('Selecciona el Tamaño de la Empresa:',
+                                   data['Company_Size'].unique())
+
+# Filtrar los datos según la selección del usuario
+data_filtrada = data[(data['Industry'] == industria_seleccionada)
+                     & (data['Country'] == pais_seleccionado) &
+                     (data['Company_Size'] == tamano_seleccionado)]
+
 df = load_data()
 
 # Calcular ratios
