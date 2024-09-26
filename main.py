@@ -5,7 +5,7 @@ import plotly.graph_objects as go
 import openai
 
 # Configuración de la página
-st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras",layout="wide")
+st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras", color="darkblue", layout="wide")
 
 # Cargar datos
 @st.cache_data
