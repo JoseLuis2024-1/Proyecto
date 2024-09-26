@@ -30,6 +30,43 @@ def colored_title(title, color):
 # Ejemplo de uso:
 colored_title("Bienvenido al Dashboard de Razones Financieras", "#05872c")  
 
+# Sección 2: Análisis Comparativo de Empresas
+def colored_header(title, color):
+    """
+    Crea un encabezado con el color especificado.
+
+    Args:
+        title (str): El texto del encabezado.
+        color (str): El código de color en formato hexadecimal (ej: #0000FF para azul).
+    """
+    st.markdown(f"<h2 style='color:{color};'>{title}</h2>", unsafe_allow_html=True)
+
+# Ejemplo de uso:
+colored_header("Análisis Comparativo de Empresas", "#641e16") 
+
+
+# Filtros interactivos
+col1, col2, col3 = st.columns(3)
+with col1:
+    selected_companies = st.multiselect('Seleccionar Empresas', df['Company_ID'].unique())
+with col2:
+    selected_metric = st.selectbox('Seleccionar Métrica', ['Ratio de Liquidez Corriente', 'Ratio de Deuda a Patrimonio', 'Cobertura de Gastos Financieros'])
+with col3:
+    chart_type = st.radio('Tipo de Gráfico', ['Barras', 'Líneas','Pastel'])
+
+# Filtrar datos
+filtered_df = df[df['Company_ID'].isin(selected_companies)]
+
+# Crear gráfico
+if chart_type == 'Barras':
+    fig_compare = px.bar(filtered_df, x='Company_ID', y=selected_metric, color='Industry', title=f'{selected_metric} por Empresa')
+elif chart_type == 'Líneas':
+    fig_compare = px.line(filtered_df, x='Company_ID', y=selected_metric, color='Industry', title=f'{selected_metric} por Empresa')
+else:
+    fig_compare = px.pie(filtered_df, values=selected_metric, color='Industry', title=f'{selected_metric} por Empresa')
+
+st.plotly_chart(fig_compare, use_container_width=True)
+
 # Calcular ratios
 df['Ratio de Liquidez Corriente'] = df['Current_Assets'] / df['Current_Liabilities']
 df['Ratio de Deuda a Patrimonio'] = (df['Short_Term_Debt'] + df['Long_Term_Debt']) / df['Equity']
