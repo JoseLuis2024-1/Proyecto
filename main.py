@@ -93,7 +93,20 @@ else:
 st.plotly_chart(fig_compare, use_container_width=True)
 
 # Sección Integración de ChatGPT
-st.header("Bienvenido al asisente de Preguntas y Respuestas con ChatGPT")
+# Sección Gráfica de barras apiladas por sector
+def colored_header(title, color):
+    """
+    Crea un encabezado con el color especificado.
+
+    Args:
+        title (str): El texto del encabezado.
+        color (str): El código de color en formato hexadecimal (ej: #0000FF para azul).
+    """
+    st.markdown(f"<h2 style='color:{color};'>{title}</h2>", unsafe_allow_html=True)
+
+# Ejemplo de uso:
+colored_header("Bienvenido al asisente de Preguntas y Respuestas con ChatGPT", "#641e16") 
+
 
 
 # Instanciar el cliente de OpenAI
