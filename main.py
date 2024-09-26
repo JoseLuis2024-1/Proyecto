@@ -3,10 +3,9 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import openai
-import plotly.graph_objects as go
 
 # Configuración de la página
-st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras", family="Arial",size=24, color="darkblue",layout="wide")
+st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras",layout="wide")
 
 # Cargar datos
 @st.cache_data
