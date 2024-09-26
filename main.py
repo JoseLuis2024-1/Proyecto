@@ -14,7 +14,7 @@ def load_data():
     url = "https://raw.githubusercontent.com/JoseLuis2024-1/Proyecto/refs/heads/main/Datos_corregido.csv"
     df = pd.read_csv(url)
     return df
-
+df = load_data()
 
 # Título del dashboard
 def colored_title(title, color):
