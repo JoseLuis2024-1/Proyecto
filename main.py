@@ -4,8 +4,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 import openai
 
-# Definir el color de fondo (en hexadecimal)
-background_color = "#f0f0f0"  # Gris claro
 
 # Configuración de la página
 st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras", layout="wide")
@@ -24,6 +22,9 @@ df = load_data()
 df['Ratio de Liquidez Corriente'] = df['Current_Assets'] / df['Current_Liabilities']
 df['Ratio de Deuda a Patrimonio'] = (df['Short_Term_Debt'] + df['Long_Term_Debt']) / df['Equity']
 df['Cobertura de Gastos Financieros'] = df['Total_Revenue'] / df['Financial_Expenses']
+
+# Definir el color de fondo (en hexadecimal)
+background_color = "#17202a"  # Gris claro
 
 # Título del dashboard
 def colored_title(title, color):
