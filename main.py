@@ -38,6 +38,9 @@ fig_sector = go.Figure(data=[
 fig_sector.update_layout(barmode='stack', title='Ratios por Sector')
 st.plotly_chart(fig_sector, use_container_width=True)
 
+st.header('Datos Filtrados')
+st.dataframe(data_filtrada)
+
 #4. Cálculo y Aplicación de Ratios Financieros
 # Cálculos de los ratios financieros
 data_filtrada['Ratio_Liquidez_Corriente'] = data_filtrada[
