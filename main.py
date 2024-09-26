@@ -68,7 +68,19 @@ fig_sector.update_layout(barmode='stack', title='Ratios por Sector')
 st.plotly_chart(fig_sector, use_container_width=True)
 
 # Sección Análisis Comparativo de Empresas
-st.header("Análisis Comparativo de las Empresas")
+def colored_header(title, color):
+    """
+    Crea un encabezado con el color especificado.
+
+    Args:
+        title (str): El texto del encabezado.
+        color (str): El código de color en formato hexadecimal (ej: #0000FF para azul).
+    """
+    st.markdown(f"<h2 style='color:{color};'>{title}</h2>", unsafe_allow_html=True)
+
+# Ejemplo de uso:
+colored_header("Análisis Comparativo de las Empresas", "#641e16") 
+
 
 # Filtros interactivos
 col1, col2, col3 = st.columns(3)
