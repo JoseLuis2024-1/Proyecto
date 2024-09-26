@@ -3,19 +3,18 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import openai
+import tkinter as tk
+
+ventana = tk.Tk()
+ventana.title("Mi Ventana")
+ventana.configure(bg="lightblue")  # Color de fondo de la ventana
+
+etiqueta = tk.Label(ventana, text="Hola, mundo!", bg="yellow", fg="black")
+etiqueta.pack()
+
+ventana.mainloop()
 
 
-# Definir el color de fondo (en hexadecimal)
-background_color = "#f0f0f0"  # Gris claro
-
-# Aplicar el estilo CSS
-st.markdown(f"""
-<style>
-.stApp {{
-    background-color: {background_color};
-}}
-</style>
-""", unsafe_allow_html=True)
 
 # Configuración de la página
 st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras", layout="wide")
