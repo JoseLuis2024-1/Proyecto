@@ -48,7 +48,7 @@ with col1:
 with col2:
     selected_metric = st.selectbox('Seleccionar Métrica', ['Ratio de Liquidez Corriente', 'Ratio de Deuda a Patrimonio', 'Cobertura de Gastos Financieros'])
 with col3:
-    chart_type = st.radio('Tipo de Gráfico', ['Barras', 'Líneas','Pie', 'Dispersión ])
+    chart_type = st.radio('Tipo de Gráfico', ['Barras', 'Líneas','Dispersión'])
 
 # Filtrar datos
 filtered_df = df[df['Company_ID'].isin(selected_companies)]
@@ -58,8 +58,6 @@ if chart_type == 'Barras':
     fig_compare = px.bar(filtered_df, x='Company_ID', y=selected_metric, color='Industry', title=f'{selected_metric} por Empresa')
 elif chart_type == 'Líneas':
     fig_compare = px.line(filtered_df, x='Company_ID', y=selected_metric, color='Industry', title=f'{selected_metric} por Empresa')
-else:
-    fig_compare = px.pie(filtered_df, values=selected_metric, color='Industry', title=f'{selected_metric} por Empresa')
 else:
     fig_compare = px.scatter(filtered_df, values=selected_metric, color='Industry', title=f'{selected_metric} por Empresa')
     
