@@ -28,7 +28,7 @@ def colored_title(title, color):
     st.markdown(f"<h1 style='color:{color};'>{title}</h1>", unsafe_allow_html=True)
 
 # Ejemplo de uso:
-colored_title("Bienvenido al Dashboard de Razones Financieras", "#070331")  
+colored_title("Bienvenido al Dashboard de Razones Financieras", "#05872c")  
 
 # Calcular ratios
 df['Ratio de Liquidez Corriente'] = df['Current_Assets'] / df['Current_Liabilities']
