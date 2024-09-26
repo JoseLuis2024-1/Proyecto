@@ -6,7 +6,22 @@ import openai
 import plotly.graph_objects as go
 
 # Configuración de la página
+fig = go.Figure()  # Supongamos que ya tienes una figura creada
 
+# Configurar el layout con el título personalizado
+fig.update_layout(
+    title={
+        'text': "Bienvenido Dashboard de Razones Financieras",
+        'font': dict(
+            family="Arial",
+            size=24,
+            color="darkblue"  # Aquí definimos el color azul marino
+        )
+    },
+    layout="wide"
+)
+
+fig.show()
 st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras", layout="wide")
 
 # Cargar datos
