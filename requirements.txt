@@ -2,4 +2,3 @@ openai==1.47.1
 pandas==2.2.3
 plotly==5.17.0
 streamlit==1.38.0
-python==3.12
