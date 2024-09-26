@@ -5,6 +5,18 @@ import plotly.graph_objects as go
 import openai
 
 
+# Definir el color de fondo (en hexadecimal)
+background_color = "#f0f0f0"  # Gris claro
+
+# Aplicar el estilo CSS
+st.markdown(f"""
+<style>
+.stApp {{
+    background-color: {background_color};
+}}
+</style>
+""", unsafe_allow_html=True)
+
 # Configuración de la página
 st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras", layout="wide")
 
