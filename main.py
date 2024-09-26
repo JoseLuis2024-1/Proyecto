@@ -3,17 +3,6 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import openai
-import tkinter as tk
-
-ventana = tk.Tk()
-ventana.title("Mi Ventana")
-ventana.configure(bg="lightblue")  # Color de fondo de la ventana
-
-etiqueta = tk.Label(ventana, text="Hola, mundo!", bg="yellow", fg="black")
-etiqueta.pack()
-
-ventana.mainloop()
-
 
 
 # Configuración de la página
@@ -34,8 +23,7 @@ df['Ratio de Liquidez Corriente'] = df['Current_Assets'] / df['Current_Liabiliti
 df['Ratio de Deuda a Patrimonio'] = (df['Short_Term_Debt'] + df['Long_Term_Debt']) / df['Equity']
 df['Cobertura de Gastos Financieros'] = df['Total_Revenue'] / df['Financial_Expenses']
 
-# Definir el color de fondo (en hexadecimal)
-background_color = "#17202a"  # Gris claro
+
 
 # Título del dashboard
 def colored_title(title, color):
