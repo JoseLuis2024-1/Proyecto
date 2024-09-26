@@ -3,6 +3,15 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import openai
+import tkinter as tk
+
+ventana = tk.Tk()
+ventana.title("Mi Ventana con Color")
+
+# Establecer el color de fondo (en hexadecimal)
+ventana.configure(bg="#f0f0f0")  # Gris claro
+
+ventana.mainloop()
 
 # Configuración de la página
 st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras", layout="wide")
