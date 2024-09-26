@@ -35,10 +35,8 @@ df['Ratio de Liquidez Corriente'] = df['Current_Assets'] / df['Current_Liabiliti
 df['Ratio de Deuda a Patrimonio'] = (df['Short_Term_Debt'] + df['Long_Term_Debt']) / df['Equity']
 df['Cobertura de Gastos Financieros'] = df['Total_Revenue'] / df['Financial_Expenses']
 
-# Título del dashboard
-st.title("Dashboard Financiero")
 
-# Sección 1: Gráfica de barras apiladas por sector
+# Sección Gráfica de barras apiladas por sector
 st.header("Análisis por Sector")
 
 sector_metrics = df.groupby('Industry')[['Ratio de Liquidez Corriente', 'Ratio de Deuda a Patrimonio', 'Cobertura de Gastos Financieros']].mean().reset_index()
@@ -53,7 +51,19 @@ fig_sector.update_layout(barmode='stack', title='Ratios Financieros por Sector')
 st.plotly_chart(fig_sector, use_container_width=True)
 
 # Sección 2: Análisis Comparativo de Empresas
-st.header("Análisis Comparativo de Empresas")
+def colored_header(title, color):
+    """
+    Crea un encabezado con el color especificado.
+
+    Args:
+        title (str): El texto del encabezado.
+        color (str): El código de color en formato hexadecimal (ej: #0000FF para azul).
+    """
+    st.markdown(f"<h2 style='color:{color};'>{title}</h2>", unsafe_allow_html=True)
+
+# Ejemplo de uso:
+colored_header("Análisis Comparativo de Empresas", "#641e16") 
+
 
 # Filtros interactivos
 col1, col2, col3 = st.columns(3)
