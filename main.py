@@ -23,7 +23,19 @@ df['Ratio de Deuda a Patrimonio'] = (df['Short_Term_Debt'] + df['Long_Term_Debt'
 df['Cobertura de Gastos Financieros'] = df['Total_Revenue'] / df['Financial_Expenses']
 
 # Título del dashboard
-st.title("Dashboard Razones Financieras")
+def colored_title(title, color):
+    """
+    Crea un título con el color especificado.
+
+    Args:
+        title (str): El texto del título.
+        color (str): El código de color en formato hexadecimal (ej: #0000FF para azul).
+    """
+    st.markdown(f"<h1 style='color:{color};'>{title}</h1>", unsafe_allow_html=True)
+
+# Ejemplo de uso:
+colored_title("Bienvenido al Dashboard de Razones Financieras", "#007bff")  # Azul claro
+
 
 # Sección Gráfica de barras apiladas por sector
 st.header("Análisis por Sector")
