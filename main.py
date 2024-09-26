@@ -33,7 +33,7 @@ colored_title("Bienvenido al Dashboard de Razones Financieras", "#05872c")
 
 
 # Calcular ratios
-df['Ratio de Liquidez Corriente'] = df['Current_Assets'] / df['Current_Liabilities']
+df['Ratio de Liquidez'] = df['Current_Assets'] / df['Current_Liabilities']
 df['Ratio de Deuda a Patrimonio'] = (df['Short_Term_Debt'] + df['Long_Term_Debt']) / df['Equity']
 df['Cobertura de Gastos Financieros'] = df['Total_Revenue'] / df['Financial_Expenses']
 
@@ -52,10 +52,10 @@ def colored_header(title, color):
 # Ejemplo de uso:
 colored_header("Análisis por Sector", "#641e16") 
 
-sector_metrics = df.groupby('Industry')[['Ratio de Liquidez Corriente', 'Ratio de Deuda a Patrimonio', 'Cobertura de Gastos Financieros']].mean().reset_index()
+sector_metrics = df.groupby('Industry')[['Ratio de Liquidez', 'Ratio de Deuda a Patrimonio', 'Cobertura de Gastos Financieros']].mean().reset_index()
 
 fig_sector = go.Figure(data=[
-    go.Bar(name='Ratio de Liquidez Corriente', x=sector_metrics['Industry'], y=sector_metrics['Ratio de Liquidez Corriente']),
+    go.Bar(name='Ratio de Liquidez', x=sector_metrics['Industry'], y=sector_metrics['Ratio de Liquidez']),
     go.Bar(name='Ratio de Deuda a Patrimonio', x=sector_metrics['Industry'], y=sector_metrics['Ratio de Deuda a Patrimonio']),
     go.Bar(name='Cobertura de Gastos Financieros', x=sector_metrics['Industry'], y=sector_metrics['Cobertura de Gastos Financieros'])
 ])
@@ -83,7 +83,7 @@ col1, col2, col3 = st.columns(3)
 with col1:
     selected_companies = st.multiselect('Seleccionar Empresas', df['Company_ID'].unique())
 with col2:
-    selected_metric = st.selectbox('Seleccionar Métrica', ['Ratio de Liquidez Corriente', 'Ratio de Deuda a Patrimonio', 'Cobertura de Gastos Financieros'])
+    selected_metric = st.selectbox('Seleccionar Métrica', ['Ratio de Liquidez', 'Ratio de Deuda a Patrimonio', 'Cobertura de Gastos Financieros'])
 with col3:
     chart_type = st.radio('Tipo de Gráfico', ['Barras', 'Líneas','Pastel'])
 
