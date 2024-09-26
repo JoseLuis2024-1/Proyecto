@@ -35,11 +35,11 @@ fig_sector = go.Figure(data=[
     go.Bar(name='Cobertura de Gastos Financieros', x=sector_metrics['Industry'], y=sector_metrics['Cobertura de Gastos Financieros'])
 ])
 
-fig_sector.update_layout(barmode='stack', title='Ratios Financieros por Sector')
+fig_sector.update_layout(barmode='stack', title='Ratios por Sector')
 st.plotly_chart(fig_sector, use_container_width=True)
 
 # Sección 2: Análisis Comparativo de Empresas
-st.header("Análisis Comparativo de Empresas")
+st.header("Análisis Comparativo de las Empresas")
 
 # Filtros interactivos
 col1, col2, col3 = st.columns(3)
