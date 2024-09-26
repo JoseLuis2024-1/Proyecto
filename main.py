@@ -3,29 +3,10 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import openai
+import plotly.graph_objects as go
 
 # Configuración de la página
-fig.update_layout(
-    title={
-        'text': "<b>Bienvenido Dashboard de Razones Financieras</b>",  # Texto en negrita
-        'font': dict(
-            family="Times New Roman",
-            size=30,
-            color="navy",
-            # Agregar un poco de sombra para resaltar
-            # Puedes ajustar estos valores según tus preferencias
-            shadow=dict(
-                color="rgba(0, 0, 0, 0.3)",
-                opacity=1,
-                offset={
-                    'x': 3,
-                    'y': 3
-                }
-            )
-        )
-    },
-    # ... otros ajustes del layout
-)
+
 st.set_page_config(page_title="Bienvenido Dashboard de Razones Financieras", layout="wide")
 
 # Cargar datos
