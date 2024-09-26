@@ -38,27 +38,6 @@ fig_sector = go.Figure(data=[
 fig_sector.update_layout(barmode='stack', title='Ratios por Sector')
 st.plotly_chart(fig_sector, use_container_width=True)
 
-st.header('Datos Filtrados')
-st.dataframe(data_filtrada)
-
-#4. Cálculo y Aplicación de Ratios Financieros
-# Cálculos de los ratios financieros
-data_filtrada['Ratio_Liquidez_Corriente'] = data_filtrada[
-    'Current_Assets'] / data_filtrada['Current_Liabilities']
-data_filtrada['Ratio_Deuda_a_Patrimonio'] = (
-    data_filtrada['Short_Term_Debt'] +
-    data_filtrada['Long_Term_Debt']) / data_filtrada['Equity']
-data_filtrada['Cobertura_Gastos_Financieros'] = data_filtrada[
-    'Total_Revenue'] / data_filtrada['Financial_Expenses']
-
-# Mostrar los cálculos en un formato tabular
-st.header('Ratios Financieros Calculados')
-st.write('Estos son los ratios calculados para las empresas seleccionadas:')
-st.dataframe(data_filtrada[[
-    'Company_ID', 'Ratio_Liquidez_Corriente', 'Ratio_Deuda_a_Patrimonio',
-    'Cobertura_Gastos_Financieros'
-]])
-
 # Sección Análisis Comparativo de Empresas
 st.header("Análisis Comparativo de las Empresas")
 
