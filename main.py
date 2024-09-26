@@ -34,11 +34,23 @@ def colored_title(title, color):
     st.markdown(f"<h1 style='color:{color};'>{title}</h1>", unsafe_allow_html=True)
 
 # Ejemplo de uso:
-colored_title("Bienvenido al Dashboard de Razones Financieras", "#007bff")  # Azul claro
+colored_title("Bienvenido al Dashboard de Razones Financieras", "#2c3e50")  
 
 
 # Sección Gráfica de barras apiladas por sector
-st.header("Análisis por Sector")
+def colored_header(title, color):
+    """
+    Crea un encabezado con el color especificado.
+
+    Args:
+        title (str): El texto del encabezado.
+        color (str): El código de color en formato hexadecimal (ej: #0000FF para azul).
+    """
+    st.markdown(f"<h2 style='color:{color};'>{title}</h2>", unsafe_allow_html=True)
+
+# Ejemplo de uso:
+colored_header("Análisis por Sector", "#4CAF50")  # Verde claro
+
 
 sector_metrics = df.groupby('Industry')[['Ratio de Liquidez Corriente', 'Ratio de Deuda a Patrimonio', 'Cobertura de Gastos Financieros']].mean().reset_index()
 
