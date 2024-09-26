@@ -14,6 +14,15 @@ def load_data():
     df = pd.read_csv(url)
     return df
 
+st.subheader("Acerca del conjunto de datos:")
+#Mostramos los primeros datos de nuestro dataset
+st.write(data.head())
+
+#Mostramos las estadisticas básicas
+st.write(data.describe().T)
+
+st.subheader("Exploremos los datos:")
+
 #3.Construcción del Dashboard Interactivo
 
 # Filtros interactivos
